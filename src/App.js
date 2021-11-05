@@ -1,11 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './hr';
 
 function App() {
   return (
     <div className="App">
-      hello
-      
+     <Dashboard/> 
+
     </div>
   );
 }
