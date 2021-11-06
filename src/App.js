@@ -12,7 +12,12 @@ function App() {
 
   <BrowserRouter>
   <Switch>
-<Route exact path ='/' component={HomePage} > </Route>
+
+
+  <Route exact path="/" component={HomePage}
+        
+         ></Route>
+
 
    <Route exact path = '/Create' component={Create}></Route>
 
