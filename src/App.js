@@ -1,10 +1,12 @@
 import './App.css';
-import Dashboard from './hr';
+import Create from './Create';
 
 function App() {
   return (
     <div className="App">
-     <Dashboard/> 
+
+      <Create/>
+
 
     </div>
   );
