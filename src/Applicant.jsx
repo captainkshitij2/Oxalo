@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import { Container } from 'react-bootstrap';
 const Applicant = () => {
 
         const [data, setData] = useState({
@@ -25,6 +26,7 @@ const Applicant = () => {
         }
     return (
         <div>
+            <Container>
               <form onSubmit= {handleSubmit}>
                 <div className="mb-3">
                     <label className="form-label"> JOB ROLE<span>*</span></label>
@@ -65,6 +67,7 @@ const Applicant = () => {
 
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>
+            </Container>
         </div>
     )
 }
