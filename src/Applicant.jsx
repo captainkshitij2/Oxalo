@@ -49,6 +49,18 @@ const Applicant = () => {
                     <input type="text" className="form-control" name= "techno" value= {techno} onChange= {handleChange} />
                 </div>
 
+                <div className="mb-3">
+                    <label className="form-label">Notice Period<span>*</span></label>
+                    <input type="text" className="form-control" name= "notice" value= {notice} onChange= {handleChange} />
+                </div>
+
+                <div className="mb-3">
+                    <label className="form-label">Salary<span>*</span></label>
+                    <input type="number" className="form-control" name= "salary" value= {salary} onChange= {handleChange} />
+                </div>
+
+
+
 
 
                 <button type="submit" className="btn btn-primary">Submit</button>
