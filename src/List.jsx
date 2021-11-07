@@ -1,11 +1,16 @@
 import { Button, Table, Modal } from "react-bootstrap";
-import React from 'react'
-import QRcode from 'qrcode'
-
+import React from 'react';
+import {useState} from 'react';
+import {useHistory} from  'react-router'
+import { Link } from "react-router-dom";
 const List = (props) => {
+    
+
+
     return (
-        <div className='container'>
-            <span>List Of Applicant </span>
+        <div className='container'style={{marginTop:"100px"}} >
+            <span  style={{fontSize:"20px"}}><b>List Of Applicant </b></span>
+            
             
             <Table bordered striped hover>
                 <thead>
@@ -17,7 +22,7 @@ const List = (props) => {
                 </thead>
                 <tbody> 
 
-                    
+
                    {props.applicantData.map(item => {
                        return (
                            <tr>
@@ -25,16 +30,16 @@ const List = (props) => {
                                <td>{item.techno}</td>
                                <td>{item.salary}</td>
                                <td>{item.notice}</td>
-                               <td>
-                                    {QRcode}
-                               </td>
                            </tr>
                        )
                    })}
                 </tbody> 
             
 
+
             </Table>
+            <Link to='/Create'><button className="btn btn-primary" style={{marginLeft:"1000px",marginTop:"10px"}}>Hr desk </button></Link>
+
         </div>
     )
 }

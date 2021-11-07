@@ -21,7 +21,7 @@ const Applicant = (props) => {
             setData({...data, [e.target.name]: e.target.value});
         }
     
-        const handleSubmit = (e) => {
+        const handleSub = (e) => {
             e.preventDefault();
             props.handleAddApplicant(data)
             history.push('/List')
@@ -29,7 +29,7 @@ const Applicant = (props) => {
     return (
         <div>
             <Container>
-              <form onSubmit= {handleSubmit}>
+              <form onSubmit= {handleSub}>
                 <div className="mb-3">
                     <label className="form-label"> JOB ROLE<span>*</span></label>
                     <input type="text" className="form-control" name= "jobcode" value= {jobcode} onChange= {handleChange} />

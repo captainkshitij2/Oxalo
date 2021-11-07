@@ -49,7 +49,7 @@ const Create = (props) => {
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
 
-            {/* <Link to='./List'> <button className='btn btn-success'> Check applicants  </button> </Link>  */}
+            <Link to='./List'> <button className='btn btn-success'> Check applicants  </button> </Link> 
 
 
            
