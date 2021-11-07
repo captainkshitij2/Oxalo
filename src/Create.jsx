@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
-import {Button} from 'bootstrap'
+import {Link,BrowserRouter,Route,Switch} from 'react-router-dom';
+import {Button} from 'bootstrap';
+import { useHistory } from 'react-router'
 
+
+
+import List from './List'
 const Create = (props) => {
+    let history = useHistory()
     const [data, setData] = useState({
         name: '',
         job: '',
@@ -18,7 +23,8 @@ const Create = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(data)
+        props.handleAdd(data)
+        history.push('/Hrlist')
     }
 
     return (
@@ -42,6 +48,12 @@ const Create = (props) => {
                     <input type="text" className="form-control" name= "desc" value= {desc} onChange= {handleChange} />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
+
+            {/* <Link to='./List'> <button className='btn btn-success'> Check applicants  </button> </Link>  */}
+
+
+           
+           
             </form>
         </div>
     );

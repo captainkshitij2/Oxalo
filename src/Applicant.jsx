@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-const Applicant = () => {
-
+import { useHistory } from 'react-router';
+const Applicant = (props) => {
+        let history = useHistory()
         const [data, setData] = useState({
             jobcode: '',
 
@@ -22,7 +23,8 @@ const Applicant = () => {
     
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.log(data)
+            props.handleAddApplicant(data)
+            history.push('/List')
         }
     return (
         <div>
