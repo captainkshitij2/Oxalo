@@ -16,6 +16,8 @@ const List = (props) => {
                     <th>qr code</th>
                 </thead>
                 <tbody> 
+
+                    
                    {props.applicantData.map(item => {
                        return (
                            <tr>
