@@ -8,8 +8,8 @@ const Hrlist = (props) => {
     return (
         <div className="container mt-3">
             <Link to='/Create'><button className="btn btn-primary">Add</button></Link>
-            <input className= "form-control" type="text" value= {search} onChange= {(e) => setSearch(e.target.value)} />
-            <Table striped bordered hover>
+            <input className= "form-control mt-3" placeholder='Search Here' type="text" value= {search} onChange= {(e) => setSearch(e.target.value)} />
+            <Table striped bordered hover className="container mt-3">
                 <thead>
                     <th>Name</th>
                     <th>Job</th>

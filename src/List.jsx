@@ -4,14 +4,20 @@ import {useState} from 'react';
 import {useHistory} from  'react-router'
 import { Link } from "react-router-dom";
 const List = (props) => {
-    
+    const[search,setSearch]= useState('');
 
 
     return (
+
+        
         <div className='container'style={{marginTop:"100px"}} >
             <span  style={{fontSize:"20px"}}><b>List Of Applicant </b></span>
             
+            <input className= "form-control mt-3" placeholder='Search Here' type="text" value= {search} onChange= {(e) => setSearch(e.target.value)} />
+
             
+            <Link to='/Applicant' > <button className="btn btn-primary"> Add Applicant</button> </Link>
+
             <Table bordered striped hover>
                 <thead>
                     <th>Name</th>
@@ -23,7 +29,14 @@ const List = (props) => {
                 <tbody> 
 
 
-                   {props.applicantData.map(item => {
+                   {props.applicantData.filter(item=>{
+                       const nameof=item.nameof.toLowerCase().includes(search.toLowerCase())
+                       const techno=item.techno.toLowerCase().includes(search.toLowerCase())
+                       const salary=item.salary.toLowerCase().includes(search.toLowerCase())
+                       const notice=item.notice.toLowerCase().includes(search.toLowerCase())
+                       return nameof || techno || salary || notice
+
+                   }).map(item => {
                        return (
                            <tr>
                                <td>{item.nameof}</td>
@@ -33,6 +46,12 @@ const List = (props) => {
                            </tr>
                        )
                    })}
+
+
+
+
+
+
                 </tbody> 
             
 

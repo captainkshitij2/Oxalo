@@ -10,17 +10,32 @@ import Hrlist from './Hrlist';
 
 function App() {
   const LOCAL_STORAGE_KEY = "hrData"
+  const LOCAL_STORAGE_KEY_1 = "applicantData"
   const [hrData, setHrData] = useState([])
   const [applicantData, setApplicantData] = useState([])
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     setHrData([...data])
+    
   }, [])
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(hrData))
   }, [hrData])
+  ////
+
+  useEffect(() => {
+    const data1 = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY_1))
+    setApplicantData([...data1])
+    
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_1, JSON.stringify(applicantData))
+  }, [applicantData])
+
+  ///
 
   const handleAdd = (val) => {
     setHrData([...hrData, val])

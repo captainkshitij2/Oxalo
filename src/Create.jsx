@@ -22,9 +22,15 @@ const Create = (props) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        props.handleAdd(data)
-        history.push('/Hrlist')
+        if(name === '' || job === '' || desc === ''){
+            e.preventDefault()
+            alert('all details are mandatory')
+        } else {
+            
+            e.preventDefault();
+            props.handleAdd(data)
+            history.push('/Hrlist')
+        }
     }
 
     return (

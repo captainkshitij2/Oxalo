@@ -2,6 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+
+
 const Applicant = (props) => {
         let history = useHistory()
         const [data, setData] = useState({
@@ -28,9 +30,10 @@ const Applicant = (props) => {
         }
     return (
         <div>
-            <Container>
+            <Container >
+                <h3 className='mt-2'> CREATE APPLICANT DETAILS </h3>
               <form onSubmit= {handleSub}>
-                <div className="mb-3">
+                <div className="mt-3">
                     <label className="form-label"> JOB ROLE<span>*</span></label>
                     <input type="text" className="form-control" name= "jobcode" value= {jobcode} onChange= {handleChange} />
                 </div>
