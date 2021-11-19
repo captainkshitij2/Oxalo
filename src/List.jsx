@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const List = (props) => {
     const[search,setSearch]= useState('');
 
+ 
 
     return (
 
@@ -16,7 +17,7 @@ const List = (props) => {
             <input className= "form-control mt-3" placeholder='Search Here' type="text" value= {search} onChange= {(e) => setSearch(e.target.value)} />
 
             
-            <Link to='/Applicant' > <button className="btn btn-primary"> Add Applicant</button> </Link>
+            <Link to='/Applicant' > <button className="btn btn-primary"style={{marginTop:'20px',marginBottom:'20px'}}> Add Applicant</button> </Link>
 
             <Table bordered striped hover>
                 <thead>
@@ -36,13 +37,16 @@ const List = (props) => {
                        const notice=item.notice.toLowerCase().includes(search.toLowerCase())
                        return nameof || techno || salary || notice
 
-                   }).map(item => {
+                   }).map((item,index) => {
                        return (
                            <tr>
                                <td>{item.nameof}</td>
                                <td>{item.techno}</td>
                                <td>{item.salary}</td>
                                <td>{item.notice}</td>
+                               <td> 
+                               <button className="btn btn-danger" onClick= {() => props.handleDelete1(index)}>Delete</button>
+                               </td>
                            </tr>
                        )
                    })}

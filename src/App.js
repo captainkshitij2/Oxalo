@@ -49,6 +49,12 @@ function App() {
     setHrData([...hrData.slice(0, index), ...hrData.slice(index+1)])
   }
 
+
+  const handleDelete1= (index) => {
+    setApplicantData([...applicantData.slice(0, index), ...applicantData.slice(index+1)])
+  }
+
+
   return (
     <div className="App">
 
@@ -63,7 +69,7 @@ function App() {
 
    <Route exact path = '/Applicant' render={() => <Applicant handleAddApplicant= {handleAddApplicant} />} />
 
-  <Route exact path='/List' render= {() => <List applicantData= {applicantData} />} /> 
+  <Route exact path='/List' render= {() => <List applicantData= {applicantData} handleDelete1= {handleDelete1}  />} /> 
 
     <Route path='/Hrlist' render= {() => <Hrlist hrData= {hrData} handleDelete= {handleDelete} />} />
 
